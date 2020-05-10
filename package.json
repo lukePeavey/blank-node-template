@@ -1,0 +1,42 @@
+{
+  "name": "blank-node-template",
+  "description": "A blank node project with some basic configuration and dev tools",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "Luke Peavey",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node $npm_package_main",
+    "start:dev": "nodemon $npm_package_main",
+    "test": "jest",
+    "lint": "./node_modules/.bin/eslint . --color && echo \"eslint: no lint errors\"",
+    "format": "./node_modules/.bin/prettier **/*.{js,css,md} --write"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": "eslint --cache --fix",
+    "**/*.{js,jsx,ts,tsx,json}": "prettier --write"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.20.2",
+    "husky": ">=4",
+    "jest": "^26.0.1",
+    "lint-staged": ">=10",
+    "nodemon": "^2.0.3",
+    "prettier": "^2.0.5"
+  },
+  "engines": {
+    "node": "^14.2.0"
+  }
+}
